@@ -6,13 +6,13 @@
 #    By: abtouait <abtouait@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 18:18:47 by abtouait          #+#    #+#              #
-#    Updated: 2025/02/09 18:20:37 by abtouait         ###   ########.fr        #
+#    Updated: 2025/03/04 00:44:14 by abtouait         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = parser.c
+SRC = parser.c utils.c ft_error.c linked_list.c
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -21,10 +21,10 @@ OBJ = $(SRC:.c=.o)
 all:	$(NAME)
 
 .c.o:
-	gcc $(CFLAGS) -c $< -o $@
+	cc $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	cc -o $(NAME) $(OBJ)
 
 clean:
 	rm -f *.o
